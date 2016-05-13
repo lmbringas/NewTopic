@@ -1,0 +1,32 @@
+{% load staticfiles %}
+
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewTopic</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper blue lighten-0">
+            <a href="/" class="brand-logo">NewTopic</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">De relleno</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="{% static 'js/jquery-2.2.2.js' %}"></script>
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    {% block content %} {% endblock %}
+</body>
+
+</html>
