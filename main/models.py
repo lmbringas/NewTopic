@@ -20,9 +20,15 @@ class Post(models.Model):
     publicated = models.BooleanField()
     author = models.ForeignKey(Author)
 
+    def __str__(self):
+        return self.title
+
 class Comment(models.Model):
     author = models.ForeignKey(User,null=True,blank=True)
     comment = models.TextField()
     post = models.ForeignKey(Post)
     date = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField()
+
+    def __str__(self):
+        return self.comment
