@@ -5,25 +5,46 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fullpage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dialog.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NewTopic</title>
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper blue lighten-0">
-            <a href="/" class="brand-logo">NewTopic</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">De relleno</a></li>
-            </ul>
+    <div class="nav row">
+        <div class="col s6"><a href="/">NewTopic</a></div>
+        <div class="col s6"><a href="/mypost">MyPosts</a></div>
+        <div class="col s4"><a href="">About</a></div>
+        <div class="col s4 "><a href="">DeRelleno</a></div>
+    </div>
+    <div class="dialog-all">
+        <div class="dialog-container">
+            <div class="row">
+                <div class="container">
+                    <h4 align="center">New Post</h4>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="input-field" style="top:2vw;">
+                            <input id="title" type="text" name="title" class="validate">
+                            <label for="content">Title</label>
+                        </div>
+                        <div class="input-field" style="top:2vw;">
+                            <textarea class="materialize-textarea" style='overflow:scroll; height:10vw; ' name="content"></textarea>
+                            <label for="textarea1">Content</label>
+                        </div>
+                        <button class="btn waves-effect waves-light" style="top:2vw;" type="submit" name="action">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </nav>
-
+    </div>
+    <a class="btn-floating btn-large waves-effect waves-light "><span id="btn-floating" style="font-size:2em;">+</span></a>
     <script src="{% static 'js/jquery-2.2.2.js' %}"></script>
     <script src="{% static 'js/materialize.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fullPage.js' %}"></script>
+    <script src="{% static 'js/endless-pagination.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
 
     {% block content %} {% endblock %}

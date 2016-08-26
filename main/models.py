@@ -17,6 +17,7 @@ class Post(models.Model):
     title = models.CharField('Titulo',max_length=32)
     content = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+    #photo = models.ImageField(upload_to="media/", blank=True)
     publicated = models.BooleanField()
     author = models.ForeignKey(Author)
 

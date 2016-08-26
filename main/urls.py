@@ -7,4 +7,7 @@ urlpatterns = patterns('',
                            name='home'),
                        url(r'^posts/(?P<id_post>\d+)/$',
                            'main.views.post',
-                           name='post'),)
+                           name='post'),
+                       url(r'^mypost$',
+                          'main.views.ownPost',
+                          name='mypost'),)

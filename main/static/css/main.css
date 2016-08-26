@@ -1,0 +1,98 @@
+::selection {
+    color: red;
+}
+.nav {
+    display: inline-flex;
+    position: fixed;
+    z-index: 10;
+    font-size: 26px;
+}
+.nav div a {
+    margin-left: 13vw;
+    color: white;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+}
+.nav div a:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+.nav div a:hover:after {
+    width: 100%;
+    background: white;
+}
+.container {
+    text-align: center;
+}
+.titulo {
+    color: #212121;
+    font-size: 6em;
+}
+.button {
+    padding: 0.4em 0.4em;
+    border-radius: 5px;
+    color: white;
+    border-style: solid;
+    border-width: 1.5px;
+    font-size: 2em;
+}
+.btn-floating {
+    background: transparent;
+    position: fixed;
+    margin-left: 90vw;
+    margin-top: 40vw;
+}
+.text-comment {
+    font-size: 2em;
+    resize: none;
+    color: #FFF;
+    border-color: #000;
+    height: 15vw;
+}
+.mp {
+    position: absolute;
+    top:50px;
+    overflow: visible;
+}
+.text-comment:focus {
+    border-color: white;
+    outline: 0;
+}
+.btn-comment {
+    border-width: 2px;
+    font-size: 1em;
+    background: transparent;
+}
+.list-comment {
+    font-size: 2em;
+    width: 50vw;
+    height: auto;
+    color: white;
+    margin-top: 2px;
+    border-radius: 5px;
+}
+.comment {
+    border: 1px solid;
+    width: 100%;
+}
+.date {
+    font-size:0.5em;
+}
+@media (max-width: 850px) {
+    .nav div a {
+        margin-left: 7vw;
+    }
+    .btn-floating {
+        margin-top: 80vw;
+    }
+    .dialog-container{
+        height: 60vw;
+        width: 60vw
+    }
+}
